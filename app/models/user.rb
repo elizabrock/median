@@ -18,5 +18,4 @@ class User < ActiveRecord::Base
       user.twitter_username = "@#{auth.info.nickname}"
     end
   end
-
 end
