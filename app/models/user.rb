@@ -8,14 +8,14 @@ class User < ActiveRecord::Base
   validates :email, format: { with: /.+@.+\..+/, message: "must be an email address" }, uniqueness: true
   validates :password, confirmation: true
   validates :password, :password_confirmation, presence: { on: :create }
-  validates :twitter_id
-  validates :twitter_username
+  validates_uniqueness_of :twitter_id
+  validates_uniqueness_of :twitter_username
 
   def self.find_for_twitter_oauth(auth)
     where(auth.slice(:provider, :uid, :nickname)).first_or_create do |user|
       user.provider = auth.provider
       user.twitter_id = auth.uid
       user.twitter_username = "@#{auth.info.nickname}"
+    end
   end
-
 end
