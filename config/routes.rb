@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'feeds/index'
+
   get 'sitemaps/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -15,6 +17,9 @@ Rails.application.routes.draw do
 
   resources :sitemaps, :only => :index
   get "sitemap.xml" => "sitemaps#index", format: "xml", as: :sitemap
+
+  resources :feeds, :only => :index
+  get "feeds.rss" => "feeds#index", format: "rss", as: :feed
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
