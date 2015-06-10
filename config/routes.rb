@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'users#index'
+  get 'auth/twitter/callback', to: 'user_sessions#create'
 
   resources :posts, only: [:new, :create]
   resource :user_session, only: [:new, :create, :destroy]
