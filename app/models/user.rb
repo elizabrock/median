@@ -10,10 +10,18 @@ class User < ActiveRecord::Base
   validates :password, :password_confirmation, presence: { on: :create }
   validates_uniqueness_of :twitter_id
   validates_uniqueness_of :twitter_nickname
+  validates_uniqueness_of :oauth_token
+  validates_uniqueness_of :oauth_secret
 
   def update_with_twitter_oauth(auth)
       self.twitter_id = auth.uid
       self.twitter_nickname = "@#{auth.info.nickname}"
+      self.oauth_token = auth.credentials.token
+      self.oauth_secret = auth.credentials.secret
       self.save
   end
+
 end
+
+
+
