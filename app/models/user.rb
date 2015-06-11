@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :twitter_nickname
 
   def update_with_twitter_oauth(auth)
-      # self.provider = auth.provider
       self.twitter_id = auth.uid
       self.twitter_nickname = "@#{auth.info.nickname}"
       self.save
