@@ -1,3 +1,6 @@
+require "twitter"
+require "oauth"
+
 class PostsController < ApplicationController
   before_filter :load_post
   before_filter :load_user, except: [:new, :create]
@@ -11,6 +14,7 @@ class PostsController < ApplicationController
     @post.author = current_user
     if @post.save
       redirect_to user_posts_path(current_user), notice: "Your knowledge has been published"
+      tweet
     else
       flash.alert = "Your knowledge could not be published. Please correct the errors below."
       render :new
@@ -18,6 +22,16 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def tweet
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = "AOWzSuHBxmEZWsPzVrglusfFh"
+      config.consumer_secret     = "lrOamkizm6iz3g0DaQvP9PlUdCkM2w3zCdALpXelZITnnNiIP5"
+      config.access_token        = @post.author.oauth_token
+      config.access_token_secret = @post.author.oauth_secret
+  end
+      client.update("tweet")
+  end
 
   def load_post
     if params[:id].present?
