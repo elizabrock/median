@@ -4,7 +4,6 @@ class UserSessionsController < ApplicationController
   end
 
   def create
-    raise env["omniauth.auth"].to_yaml
     if @user = login(params[:user][:email], params[:user][:password])
       redirect_to root_path, notice: "Welcome back, #{@user.name}"
     else
