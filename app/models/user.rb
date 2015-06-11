@@ -9,13 +9,12 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true
   validates :password, :password_confirmation, presence: { on: :create }
   validates_uniqueness_of :twitter_id
-  validates_uniqueness_of :twitter_username
+  validates_uniqueness_of :twitter_nickname
 
-  def self.find_for_twitter_oauth(auth)
-    where(auth.slice(:provider, :uid, :nickname)).first_or_create do |user|
-      user.provider = auth.provider
-      user.twitter_id = auth.uid
-      user.twitter_username = "@#{auth.info.nickname}"
-    end
+  def update_with_twitter_oauth(auth)
+      # self.provider = auth.provider
+      self.twitter_id = auth.uid
+      self.twitter_nickname = "@#{auth.info.nickname}"
+      self.save
   end
 end
