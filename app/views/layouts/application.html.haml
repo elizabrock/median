@@ -23,7 +23,7 @@
           - if controller_name == "posts" && action_name == "index"
             %li= link_to image_tag('RSS.png'), request.original_url+".rss", :class => "rss_icon", :id => "rss"
           - else
-            %li= link_to image_tag('RSS.png'), root_url+"/feeds.rss", :class => "rss_icon", :id => "rss"
+            %li= link_to image_tag('RSS.png'), root_url+"feeds.rss", :class => "rss_icon", :id => "rss"
       %header= content_for?(:page_title) ? content_for(:page_title) : "Page Title"
       %section#content
         - flash.each do |key, message|
