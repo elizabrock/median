@@ -30,7 +30,7 @@ class PostsController < ApplicationController
       config.access_token        = @post.author.oauth_token
       config.access_token_secret = @post.author.oauth_secret
   end
-      client.update("#{absolute_url}")
+      client.update("Check out my new post on Median: #{@post.title.upcase} - #{absolute_url}")
   end
 
   def absolute_url
