@@ -34,7 +34,7 @@ class PostsController < ApplicationController
   end
 
   def absolute_url
-    request.base_url + request.original_fullpath
+    request.base_url  + "/users/1" + request.original_fullpath + "/#{@post.id}"
   end
 
   def load_post
