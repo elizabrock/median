@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :require_login, except: [:index, :show]
 
   def index
-    @posts = @user.posts.all
+    @posts = @user.posts.order("created_at").page(params[:page]).per(PER_PAGE)
     respond_to do |format|
       format.html
       format.rss {render :layout => false}
@@ -19,6 +19,11 @@ class PostsController < ApplicationController
       flash.alert = "Your knowledge could not be published. Please correct the errors below."
       render :new
     end
+  end
+
+  def show
+    @comments = @post.comments.all
+    @comment = Comment.new
   end
 
   private
