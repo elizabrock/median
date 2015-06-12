@@ -13,8 +13,8 @@ class PostsController < ApplicationController
   def create
     @post.author = current_user
     if @post.save
-      redirect_to user_posts_path(current_user), notice: "Your knowledge has been published"
       tweet
+      redirect_to user_posts_path(current_user), notice: "Your knowledge has been published"
     else
       flash.alert = "Your knowledge could not be published. Please correct the errors below."
       render :new
@@ -30,7 +30,11 @@ class PostsController < ApplicationController
       config.access_token        = @post.author.oauth_token
       config.access_token_secret = @post.author.oauth_secret
   end
-      client.update("tweet")
+      client.update("#{absolute_url}")
+  end
+
+  def absolute_url
+    request.base_url + request.original_fullpath
   end
 
   def load_post
