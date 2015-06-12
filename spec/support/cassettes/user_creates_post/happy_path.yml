@@ -2,17 +2,22 @@
 http_interactions:
 - request:
     method: post
-    uri: https://AOWzSuHBxmEZWsPzVrglusfFh:lrOamkizm6iz3g0DaQvP9PlUdCkM2w3zCdALpXelZITnnNiIP5@api.twitter.com/oauth2/token
+    uri: https://api.twitter.com/1.1/statuses/update.json
     body:
       encoding: UTF-8
-      string: grant_type=client_credentials
+      string: status=Check+out+my+new+post+on+Median%3A+TIL%3A+MUGS+DON%27T+WASH+THEMSELVES+-+http%3A%2F%2Fwww.example.com%2Fusers%2F1%2Fposts%2F1
     headers:
       Accept:
-      - "*/*"
+      - application/json
       User-Agent:
       - TwitterRubyGem/5.14.0
+      Authorization:
+      - OAuth oauth_consumer_key="AOWzSuHBxmEZWsPzVrglusfFh", oauth_nonce="15f5b62a461e69f8868a189c8500e354",
+        oauth_signature="7FQr8TBJi1%2Bf%2FL%2F9kh%2B1v%2B0GJDA%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1434141604", oauth_token="91851523-5Fvzui6QGxwFlYLMUdFP50ZkEYC8S4YM1dOL09Faq",
+        oauth_version="1.0"
       Content-Type:
-      - application/x-www-form-urlencoded; charset=UTF-8
+      - application/x-www-form-urlencoded
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -25,114 +30,54 @@ http_interactions:
       Content-Disposition:
       - attachment; filename=json.json
       Content-Length:
-      - '151'
+      - '1069'
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Fri, 12 Jun 2015 16:05:03 GMT
+      - Fri, 12 Jun 2015 20:40:05 GMT
       Expires:
       - Tue, 31 Mar 1981 05:00:00 GMT
       Last-Modified:
-      - Fri, 12 Jun 2015 16:05:03 GMT
-      Ml:
-      - A
+      - Fri, 12 Jun 2015 20:40:05 GMT
       Pragma:
       - no-cache
       Server:
       - tsa_b
       Set-Cookie:
-      - guest_id=v1%3A143412510308120727; Domain=.twitter.com; Path=/; Expires=Sun,
-        11-Jun-2017 16:05:03 UTC
+      - guest_id=v1%3A143414160511341071; Domain=.twitter.com; Path=/; Expires=Sun,
+        11-Jun-2017 20:40:05 UTC
+      - lang=en; Path=/
       Status:
       - 200 OK
       Strict-Transport-Security:
       - max-age=631138519
+      X-Access-Level:
+      - read-write
       X-Connection-Hash:
-      - 5576d69b17850476c71e4823b9e5ecdf
+      - 7e7565aa5b122641701cf3d931ede6cd
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
       X-Response-Time:
-      - '11'
+      - '93'
       X-Transaction:
-      - f58a5dc852f21e45
+      - 3d848742ae771838
       X-Tsa-Request-Body-Time:
       - '0'
       X-Twitter-Response-Tags:
       - BouncerCompliant
-      X-Ua-Compatible:
-      - IE=edge,chrome=1
       X-Xss-Protection:
       - 1; mode=block
     body:
       encoding: ASCII-8BIT
-      string: '{"token_type":"bearer","access_token":"AAAAAAAAAAAAAAAAAAAAAM1kgAAAAAAAehsCGOb1jKO0QyFdrz0fs5UdLj4%3DIDlC40oHShLOyR5vxZIJM25wBguOBu36xL6EJeXbaolaKMyhV8"}'
+      string: '{"created_at":"Fri Jun 12 20:40:05 +0000 2015","id":609460181399957504,"id_str":"609460181399957504","text":"Check
+        out my new post on Median: TIL: MUGS DON''T WASH THEMSELVES - http:\/\/t.co\/ryccc9JfZZ","source":"\u003ca
+        href=\"http:\/\/median-nss.com\/\" rel=\"nofollow\"\u003eMedian NSS\u003c\/a\u003e","truncated":false,"in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":null,"in_reply_to_user_id_str":null,"in_reply_to_screen_name":null,"user":{"id":91851523,"id_str":"91851523","name":"marrclina","screen_name":"marrclina","location":"Nashville,
+        TN","description":"software development student with a digital marketing background
+        || looking to connect the dots between marketing and technology","url":null,"entities":{"description":{"urls":[]}},"protected":false,"followers_count":107,"friends_count":150,"listed_count":5,"created_at":"Sun
+        Nov 22 19:30:15 +0000 2009","favourites_count":11,"utc_offset":-18000,"time_zone":"Central
+        Time (US & Canada)","geo_enabled":false,"verified":false,"statuses_count":19,"lang":"en","contributors_enabled":false,"is_translator":false,"is_translation_enabled":false,"profile_background_color":"EDECE9","profile_background_image_url":"http:\/\/pbs.twimg.com\/profile_background_images\/55639382\/van-gogh-sunflowersdetail.jpg","profile_background_image_url_https":"https:\/\/pbs.twimg.com\/profile_background_images\/55639382\/van-gogh-sunflowersdetail.jpg","profile_background_tile":true,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/559856719740678146\/d8P46AZn_normal.jpeg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/559856719740678146\/d8P46AZn_normal.jpeg","profile_banner_url":"https:\/\/pbs.twimg.com\/profile_banners\/91851523\/1402061906","profile_link_color":"F5ABB5","profile_sidebar_border_color":"FA0000","profile_sidebar_fill_color":"FF8F05","profile_text_color":"1CBD04","profile_use_background_image":true,"default_profile":false,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false},"geo":null,"coordinates":null,"place":null,"contributors":null,"is_quote_status":false,"retweet_count":0,"favorite_count":0,"entities":{"hashtags":[],"symbols":[],"user_mentions":[],"urls":[{"url":"http:\/\/t.co\/ryccc9JfZZ","expanded_url":"http:\/\/www.example.com\/users\/1\/posts\/1","display_url":"example.com\/users\/1\/posts\/1","indices":[67,89]}]},"favorited":false,"retweeted":false,"possibly_sensitive":false,"lang":"en"}'
     http_version: 
-  recorded_at: Fri, 12 Jun 2015 16:05:04 GMT
-- request:
-    method: post
-    uri: https://api.twitter.com/1.1/statuses/update.json
-    body:
-      encoding: UTF-8
-      string: status=Check+out+my+new+post+on+Median%3A+TIL%3A+MUGS+DON%27T+WASH+THEMSELVES+-+http%3A%2F%2Fwww.example.com%2Fusers%2F1%2Fposts%2F1
-    headers:
-      Accept:
-      - application/json
-      User-Agent:
-      - TwitterRubyGem/5.14.0
-      Authorization:
-      - Bearer AAAAAAAAAAAAAAAAAAAAAM1kgAAAAAAAehsCGOb1jKO0QyFdrz0fs5UdLj4%3DIDlC40oHShLOyR5vxZIJM25wBguOBu36xL6EJeXbaolaKMyhV8
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 403
-      message: Forbidden
-    headers:
-      Cache-Control:
-      - no-cache
-      Content-Disposition:
-      - attachment; filename=json.json
-      Content-Length:
-      - '108'
-      Content-Type:
-      - application/json;charset=utf-8
-      Date:
-      - Fri, 12 Jun 2015 16:05:03 GMT
-      Server:
-      - tsa_b
-      Set-Cookie:
-      - guest_id=v1%3A143412510325194563; Domain=.twitter.com; Path=/; Expires=Sun,
-        11-Jun-2017 16:05:03 UTC
-      Status:
-      - 403 Forbidden
-      Strict-Transport-Security:
-      - max-age=631138519
-      X-Access-Level:
-      - read
-      X-Connection-Hash:
-      - 3f111d6b05f8b4fc6cb97845d1b33410
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Response-Time:
-      - '8'
-      X-Transaction:
-      - f7f1f93af769b29b
-      X-Tsa-Request-Body-Time:
-      - '1'
-      X-Twitter-Response-Tags:
-      - BouncerCompliant
-      X-Xss-Protection:
-      - 1; mode=block
-    body:
-      encoding: ASCII-8BIT
-      string: '{"errors":[{"code":220,"message":"Your credentials do not allow access
-        to this resource."}]}'
-    http_version: 
-  recorded_at: Fri, 12 Jun 2015 16:05:04 GMT
+  recorded_at: Fri, 12 Jun 2015 20:40:05 GMT
 recorded_with: VCR 2.9.3

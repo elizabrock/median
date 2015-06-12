@@ -25,8 +25,8 @@ class PostsController < ApplicationController
 
   def tweet
     client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = "AOWzSuHBxmEZWsPzVrglusfFh"
-      config.consumer_secret     = "lrOamkizm6iz3g0DaQvP9PlUdCkM2w3zCdALpXelZITnnNiIP5"
+      config.consumer_key        = ENV['twitter_key']
+      config.consumer_secret     = ENV['twitter_secret']
       config.access_token        = @post.author.oauth_token
       config.access_token_secret = @post.author.oauth_secret
   end
