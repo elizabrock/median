@@ -1,0 +1,9 @@
+
+.rss_icon {
+    width: 35px;
+}
+
+nav ul li:last-child {
+    float: right;
+    @include clearfix
+}

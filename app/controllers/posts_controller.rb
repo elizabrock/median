@@ -5,6 +5,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = @user.posts.order("created_at").page(params[:page]).per(PER_PAGE)
+    respond_to do |format|
+      format.html
+      format.rss {render :layout => false}
+    end
   end
 
   def create

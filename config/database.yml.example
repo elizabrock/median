@@ -78,8 +78,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: median_production
-  username: median
-  password: <%= ENV['MEDIAN_DATABASE_PASSWORD'] %>
+#production:
+#  <<: *default
+#  database: median_production
+#  username: median
+#  password: <%= ENV['MEDIAN_DATABASE_PASSWORD'] %>

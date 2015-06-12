@@ -22,6 +22,10 @@
             %li#link_user= link_to "#{current_user.name}", user_posts_path(current_user)
             %li#edit_user= link_to "Edit", edit_user_path
             %li#sign_out= link_to "Sign Out", user_session_path, method: :delete
+          - if controller_name == "posts" && action_name == "index"
+            %li= link_to image_tag('RSS.png'), user_posts_path(@user, format: :rss), :class => "rss_icon", :id => "rss"
+          - else
+            %li= link_to image_tag('RSS.png'), feeds_url, :class => "rss_icon", :id => "rss"
       %section
         - flash.each do |key, message|
           %div{ class: "flash-#{key}" }= message

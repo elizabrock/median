@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :show]
   end
 
+  resources :sitemaps, :only => :index, format: "xml"
+  resources :feeds, :only => :index, format: "rss"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
