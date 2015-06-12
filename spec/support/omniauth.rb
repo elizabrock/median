@@ -4,6 +4,6 @@ OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
   :info => {
     :nickname => 'NashSoftwareSchool' },
   :credentials => {
-        :token => 'AsRYsgrOIUsRHyCdETRaeWGGR',
-        :secret => 'lrOam3kicfghio09HR87sWg5D4redw3zCdALpXelZITnnNiIP5'}
+        :token => '09876t5iopjcvbhjkjhbvbnjk',
+        :secret => '09uyfdxdfyu890oijhnbpoi98765rfvghjk8765reswdfghjkl'}
 })

@@ -20,6 +20,7 @@ feature "user creates post" do
     click_on "Bob's Knowledge"
     page.should have_content("Link your profile with your Twitter Account")
     click_on "Link your profile with your Twitter Account"
+    page.should have_content("You can now post to Twitter.")
     click_on "Share Some Knowledge"
     fill_in "Title", with: "TIL: Mugs don't wash themselves"
     fill_in "Body", with: "There are some simple steps to washing a mug.  First, don't set it in the sink.  Then, apply soap, scrub and rinse.  Finally, do set the mug in the drying rack."

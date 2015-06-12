@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'sorcery'
 gem 'twitter'
 gem 'uglifier', '>= 1.3.0'
+gem 'figaro'
 
 
 group :development do
