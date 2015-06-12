@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_filter :load_post
-  before_filter :load_user, except: [:new, :create]
+  before_action :load_post
+  before_action :load_user, except: [:new, :create]
   before_action :require_login, except: [:index, :show]
 
   def index
@@ -36,6 +36,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :all_tags)
   end
 end
