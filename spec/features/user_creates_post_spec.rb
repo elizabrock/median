@@ -14,7 +14,7 @@ feature "user creates post" do
     should_be_denied_access
   end
 
-  scenario "happy path" do
+  scenario "happy path", vcr: true do
     me = Fabricate(:user, name: "Bob")
     signin_as me
     click_on "Share Some Knowledge"

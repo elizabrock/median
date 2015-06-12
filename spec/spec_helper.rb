@@ -54,10 +54,6 @@ RSpec.configure do |config|
     config.default_cassette_options = { record: :new_episodes }
   end
 
-  Spec::Runner.configure do |config|
-    config.include WebMock
-  end
-
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin
