@@ -4,4 +4,6 @@
 = simple_form_for @post do |f|
   = f.input :title
   = f.input :body
+  = f.input :all_tags, label: "Tags", placeholder: "Tags separated with commas"
   = f.button :submit, "Publish Knowledge"
+
