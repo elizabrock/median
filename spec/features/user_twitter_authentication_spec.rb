@@ -1,6 +1,6 @@
 feature "user connects to Twitter" do
 
-  scenario "logged users connect the blog to their Twitter account" do
+  scenario "logged users connect the blog to their Twitter account", vcr: true do
     me = Fabricate(:user, name: "Bob")
     signin_as me
     click_on "Bob's Knowledge"
@@ -9,7 +9,7 @@ feature "user connects to Twitter" do
     page.should have_content("You can now post to Twitter.")
   end
 
-  scenario "can handle authentication error" do
+  scenario "can handle authentication error", vcr: true do
     me = Fabricate(:user, name: "Bob")
     signin_as me
     click_on "Bob's Knowledge"

@@ -19,6 +19,7 @@ gem 'sorcery'
 gem 'twitter'
 gem 'uglifier', '>= 1.3.0'
 
+
 group :development do
   gem 'refills'
 end
@@ -42,4 +43,6 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'shoulda-matchers'
+  gem 'vcr'
+  gem 'webmock'
 end
