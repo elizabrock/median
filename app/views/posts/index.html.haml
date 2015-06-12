@@ -1,4 +1,7 @@
-= link_to "Link your profile with your Twitter Account", "/auth/twitter"
+- unless @user.twitter_nickname?
+  = link_to "Link your profile with your Twitter Account", "/auth/twitter"
+- else
+  %h3 Your posts will be published to Twitter via #{@user.twitter_nickname}
 
 - content_for(:page_title) do
   %h1 #{@user.name}'s Knowledge
